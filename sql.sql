@@ -110,9 +110,6 @@ CREATE TABLE users
     UNIQUE INDEX (password) 
 );
 
-     
-
-
 
 INSERT INTO phonebook (phoneID, firstname, lastname, business, addr1, city, state, zip, emailaddress, phonenumber) 
 VALUES (1,'Rock','Strongo', NULL,'105 Ha Dr','Pittsburgh','PA','16066','me@woo.com','8888888888');
