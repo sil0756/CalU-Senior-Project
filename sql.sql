@@ -7,7 +7,7 @@ CREATE TABLE phonebook
     phoneid      INT             NOT NULL    auto_increment, 
     firstname    VARCHAR(60)     NOT NULL, 
     lastname     VARCHAR(60)     NOT NULL, 
-    business     VARCHAR(60)     NOT NULL, 
+    business     VARCHAR(60), 
     addr1        VARCHAR(60)     NOT NULL, 
     addr2        VARCHAR(60)                 DEFAULT NULL, 
     city         VARCHAR(40)     NOT NULL, 
@@ -25,6 +25,7 @@ CREATE TABLE parts
     itemname    VARCHAR(60)     NOT NULL, 
     itemdesc    VARCHAR(255)    NOT NULL, 
     quantity    INT             NOT NULL, 
+    comments    VARCHAR(255),
     PRIMARY KEY (partid) 
 );
 
@@ -47,15 +48,16 @@ CREATE TABLE transaction
 CREATE TABLE projects 
 ( 
     projectid       INT           NOT NULL    auto_increment, 
-    projectname     VARCHAR(60)   NOT NULL, 
+    projectname     VARCHAR(100)  NOT NULL, 
     make            VARCHAR(60)   NOT NULL,
     model           VARCHAR(60)   NOT NULL,
-    trim_pkg        VARCHAR(60)   NOT NULL       
-    projectdesc     VARCHAR(255)  NOT NULL, 
+    trim_pkg        VARCHAR(60)   NOT NULL,       
+    /* Do we need a description if he can just use comments?
+    projectdesc     VARCHAR(255)  NOT NULL,*/
     purchprice      DECIMAL(10,2) NOT NULL, 
     purchdate       DATETIME      NOT NULL, 
-    sellprice       DECIMAL(10,2) NOT NULL, 
-    selldate        DATETIME,     NOT NULL
+    sellprice       DECIMAL(10,2), 
+    selldate        DATETIME,
     projectcomments VARCHAR(255),
     PRIMARY KEY (projectid), 
     UNIQUE INDEX (projectname),
@@ -112,14 +114,26 @@ CREATE TABLE users
 
 
 
-INSERT INTO phonebook (contactID, firstname,lastname,businessname,addr1,addr2,city,state,zipcode,emailaddress,mobilephone,homephone,businessphone) 
-VALUES (1,'Mitch','Zink',NULL,'105 Ashberry Dr',NULL,'Pittsburgh','PA','16066','zink@zink.com','4129183827',NULL,NULL);
+INSERT INTO phonebook (phoneID, firstname, lastname, business, addr1, city, state, zip, emailaddress, phonenumber) 
+VALUES (1,'Rock','Strongo', NULL,'105 Ha Dr','Pittsburgh','PA','16066','me@woo.com','8888888888');
 
-INSERT INTO inventory (invid, projectid,itemname,itemdesc,comments,purchprice,purchdate,sellprice,selldate,quantity) 
-VALUES (1,1,'muffler','made by flowmaster','it was new and is going to be used later this year','500.00','2019-03-14',NULL,NULL,1);
+INSERT INTO parts (partid, itemname, itemdesc, quantity, comments) 
+VALUES (1,'muffler','flowmaster', 2 ,'It''s got flooooooow');
 
-INSERT INTO projects (projectid,projectname,projectdesc,projectcomments,purchprice,purchdate,sellprice,selldate) 
-VALUES (1,'Bronco','1977 Ford Bronco','Overall in good condition. Needs new bumper and seats.','67200.00','2019-03-14',NULL,NULL);
+INSERT INTO transaction (transid, phoneid, partid, date, price, transtype, quantity)
+VALUES (1, 1, 1,'02-03-2020','150.00', 'buy', 2);
 
-INSERT INTO workcompleted (workid,projectid,workname,workdesc,workcomments,dateperformed) 
-VALUES (1,1,'Oil change','Used 5W-20 ','Completed','2019-03-14');
+INSERT INTO projects (projectid, projectname, make, model, trim_pkg, purchprice, purchdate, sellprice, selldate, projectcomments) 
+VALUES (1,'77 Bronco offroad','Ford','Bronco','SLE','67200.00','2019-03-14',NULL,NULL, 'Overall in good condition. Needs new bumper and seats.');
+
+INSERT INTO project_parts (partid, projectid,)
+VALUES (1, 1);
+
+INSERT INTO workcompleted (workid, projectid, workname, workdesc, workcomments, dateperformed) 
+VALUES (1, 1,'Oil change','5qt 5W-20 ','Completed','2019-03-14'); 
+
+INSERT INTO files (fileid, projectid, filename, filetype, dateadded)
+VALUES (1, 1, 'bronco.jpg', 'Picture', '02-03-2020');
+
+INSERT INTO users (userid, username, password)
+VALUES (1, 'admin', 'admin');
