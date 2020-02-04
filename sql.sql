@@ -54,7 +54,7 @@ CREATE TABLE projects
     trim_pkg        VARCHAR(60)   NOT NULL,       
     projectdesc     VARCHAR(255),
     purchprice      DECIMAL(10,2) NOT NULL, 
-    purchdate       DATETIME      NOT NULL, 
+    purchdate       DATETIME       NOT NULL, 
     sellprice       DECIMAL(10,2), 
     selldate        DATETIME,
     projectcomments VARCHAR(255),
@@ -133,3 +133,4 @@ VALUES (1, 1, 'bronco.jpg', 'Picture', '02-03-2020');
 
 INSERT INTO users (userid, username, password)
 VALUES (1, 'admin', 'admin');
+
