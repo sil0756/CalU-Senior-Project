@@ -52,8 +52,7 @@ CREATE TABLE projects
     make            VARCHAR(60)   NOT NULL,
     model           VARCHAR(60)   NOT NULL,
     trim_pkg        VARCHAR(60)   NOT NULL,       
-    /* Do we need a description if he can just use comments?
-    projectdesc     VARCHAR(255)  NOT NULL,*/
+    projectdesc     VARCHAR(255),
     purchprice      DECIMAL(10,2) NOT NULL, 
     purchdate       DATETIME      NOT NULL, 
     sellprice       DECIMAL(10,2), 
@@ -123,7 +122,7 @@ VALUES (1, 1, 1,'02-03-2020','150.00', 'buy', 2);
 INSERT INTO projects (projectid, projectname, make, model, trim_pkg, purchprice, purchdate, sellprice, selldate, projectcomments) 
 VALUES (1,'77 Bronco offroad','Ford','Bronco','SLE','67200.00','2019-03-14',NULL,NULL, 'Overall in good condition. Needs new bumper and seats.');
 
-INSERT INTO project_parts (partid, projectid,)
+INSERT INTO project_parts (partid, projectid)
 VALUES (1, 1);
 
 INSERT INTO workcompleted (workid, projectid, workname, workdesc, workcomments, dateperformed) 
