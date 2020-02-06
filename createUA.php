@@ -56,16 +56,13 @@ mysqli_close($link);
 <div class="form-style-6">
 <form action="createua.php" method="post">
     <p>
-        <label for="firstName">UserID:</label>
-        <input type="text" name="userid" id="userid">
+        <input type="text" name="userid"placeholder="userid" id="userid">
     </p>
     <p>
-        <label for="lastName">Username:</label>
-        <input type="text" name="username" id="username">
+        <input type="text"placeholder="username" name="username" id="username">
     </p>
     <p>
-        <label for="emailAddress">Password:</label>
-        <input type="text" name="password" id="password">
+        <input type="text" name="password" placeholder="password"id="password">
     </p>
     <input type="submit" value="Submit">
 </form>

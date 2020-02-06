@@ -51,12 +51,10 @@
          <body id="body_bg">
             <form id="login-form" method="post" action="login.php">
                <p>
-                  <label for="lastName">Username:</label>
-                  <input type="text" name="username" id="username">
+                  <input type="text" name="username"placeholder="username" id="username">
                </p>
                <p>
-                  <label for="emailAddress">Password:</label>
-                  <input type="text" type="password" name="password" id="password">
+                  <input type="text" type="password" name="password" placeholder="password" id="password">
                </p>
                <input type="submit" value="Submit">
             </form>
