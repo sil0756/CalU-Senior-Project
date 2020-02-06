@@ -8,6 +8,7 @@
 <ul>
   <li style="float:left"><a href="#">Bronco</a>
   <li><a href="homepage.php">Home</a></li>
+  <li><a href="homepage.php">Home Admin</a></li>
   <li><a href="aboutus.php">About Us</a></li>
   <li><a href="purpose.php">Purpose</a></li>
   <li><a class="active" href="faq.php">FAQ</a></li>
@@ -20,6 +21,8 @@
   <li><a href="files.php">Files</a></li>
   <li><a href="WorkCompleted.php">Work Completed</a></li>
 </ul>
+
+<h3> FAQ </h3>
 
 </body>
 </html>
