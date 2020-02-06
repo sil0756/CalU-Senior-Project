@@ -55,7 +55,9 @@
          <li><a href="projects.php">Projects</a></li>
          <li><a href="files.php">Files</a></li>
          <li><a href="WorkCompleted.php">Work Completed</a></li>
-      </ul>
+         <li><a href="createnewproject.php">Create New Project</a></li>
+  <li><a href="openproject.php">Open Project</a></li>
+</ul>
       <div class="form-style-6">
          <h1>Create New Project</h1>
          <form>

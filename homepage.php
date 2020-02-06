@@ -20,6 +20,8 @@
   <li><a href="projects.php">Projects</a></li>
   <li><a href="files.php">Files</a></li>
   <li><a href="WorkCompleted.php">Work Completed</a></li>
+  <li><a href="createnewproject.php">Create New Project</a></li>
+  <li><a href="openproject.php">Open Project</a></li>
 </ul>
 
 <h3> This is the home page for admin users. </h3>
