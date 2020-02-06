@@ -1,4 +1,3 @@
-PHP
 <?php
 
 //Connects to the MySQL database using the PDO extension
