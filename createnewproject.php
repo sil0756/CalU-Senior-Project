@@ -6,9 +6,9 @@
    if($link === false){
        die("ERROR: Could not connect. " . mysqli_connect_error());
    }
-   
+
    // If value is assigned, executes the code within the curly braces
-   if (isset($_POST['projectid']) and isset($_POST['projectname']) and isset($_POST['Make']) and isset($_POST['model']) and isset($_POST['trim_pkg']) and isset($_POST['projectdesc']) and isset($_POST['purchdate']) and isset($_POST['purchprice']) and isset($_POST['sellprice']) and isset($_POST['selldate']) and isset($_POST['projectcomments']) ){
+   if (isset($_POST['projectid']) ){
    
    // Escape user inputs for security
    $projectid = mysqli_real_escape_string($link, $_REQUEST['projectid']);
@@ -56,15 +56,15 @@
          <li><a href="files.php">Files</a></li>
          <li><a href="WorkCompleted.php">Work Completed</a></li>
          <li><a href="createnewproject.php">Create New Project</a></li>
-  <li><a href="openproject.php">Open Project</a></li>
+         <li><a href="openproject.php">Open Project</a></li>
 </ul>
       <div class="form-style-6">
          <h1>Create New Project</h1>
-         <form>
+         <form action="createnewproject.php" method="post">
             <input type="text" name="projectid" placeholder="projectid" />
             <input type="text" name="projectname" placeholder="projectname" />
             <input type="text" name="Make" placeholder="Make" />
-            <input type="text" name="Model" placeholder="Model" />
+            <input type="text" name="model" placeholder="model" />
             <input type="text" name="trim_pkg" placeholder="trim_pkg" />
             <input type="text" name="projectdesc" placeholder="projectdesc" />
             <input type="date" name="purchdate" placeholder="purchdate" />
