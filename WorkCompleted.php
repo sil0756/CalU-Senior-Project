@@ -14,7 +14,7 @@
   <li><a href="createUA.php">Create User Account</a></li>
   <li><a href="login.php">Login</a></li>
   <li><a href="logout.php">Logout</a></li>
-  <li><a href="inventory.php">Inventory</a></li>
+  <li><a href="parts.php">Parts</a></li>
   <li><a href="phonebook.php">Phonebook</a></li>
   <li><a href="projects.php">Projects</a></li>
   <li><a href="files.php">Files</a></li>

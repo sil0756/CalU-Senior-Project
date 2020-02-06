@@ -1,12 +1,20 @@
 <?php
-$dsn1 = 'mysql:host=localhost;dbname=bronco';
-$username1 = 'root';
-$password1 = '';
+$connection = mysqli_connect('localhost', 'root', '');
+
+$select_db = mysqli_select_db($connection, 'bronco');
+
+
+$dsn = 'mysql:host=localhost;dbname=tradewinds';
+$username = 'root';
+$password = '';
+
 try {
-    $db = new PDO($dsn1, $username1, $password1);
+    $db = new PDO($dsn,$username,$password);
+    echo "connected";
 }
-catch(PDOException $e) {
+catch (PDOException $e) {
     $error_message = $e->getMessage();
 }
-//connection to db
+
+
 ?>
